@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voidi - Serverin etusivu</title>
     <style>
-        /* Perusasetukset: Koko sivu tummaksi ja sisältö keskelle */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #121212;
@@ -19,134 +18,124 @@
             min-height: 100vh;
         }
 
-        /* Yläosan tekstit (logo-alueen tyyliä) */
         .hero-text {
             text-align: center;
-            margin-bottom: 60px; /* Tilaa laatikoiden yläpuolelle */
+            margin-bottom: 50px;
         }
 
         h1 {
-            color: #00ffcc; /* Turkoosi */
-            font-size: 56px;
+            color: #00ffcc;
+            font-size: 50px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin: 0 0 15px 0;
+            margin: 0 0 10px 0;
             font-weight: 800;
         }
 
         p {
             color: #bbbbbb;
-            font-size: 20px;
+            font-size: 18px;
             margin: 0;
             font-weight: 300;
         }
 
-        /* Laatikoiden asettelu */
         .box-wrapper {
             display: flex;
-            gap: 40px; /* Väli laatikoiden välissä */
+            gap: 25px;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Joustaa mobiilissa */
+            flex-wrap: wrap;
             padding: 20px;
+            max-width: 1200px;
         }
 
-        /* Yhteiset tyylit kaikille laatikoille */
         .nav-box {
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
             font-weight: bold;
-            font-size: 28px;
+            font-size: 24px;
             text-transform: uppercase;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             padding: 20px;
             box-sizing: border-box;
+            width: 260px;
+            height: 140px;
+            border-radius: 15px;
         }
 
-        /* Hiiren "leijutus" efekti (kaikkiin) */
         .nav-box:hover {
-            transform: translateY(-10px); /* Nousee hieman ylöspäin */
+            transform: translateY(-8px);
         }
 
-        /* 1. OHJEET: Valkoinen suorakulmio */
+        /* 1. OHJEET (Valkoinen) */
         .box-ohjeet {
-            width: 320px;
-            height: 160px;
             background-color: #ffffff;
             color: #000000;
-            border-radius: 15px;
         }
         .box-ohjeet:hover {
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
         }
 
-        /* 2. KAUPPA: Turkoosi suorakulmio */
-        .box-kauppa {
-            width: 370px;
-            height: 160px;
+        /* 2. SÄÄNNÖT (Turkoosi) */
+        .box-saannot {
             background-color: #00ffcc;
             color: #000000;
-            border-radius: 15px;
         }
-        .box-kauppa:hover {
+        .box-saannot:hover {
             box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
         }
 
-        /* 3. DISCORD: Valkoinen vinoneliö */
+        /* 3. KAUPPA (Tumma/Tyylikäs violetti reunus tai harmaa) */
+        .box-kauppa {
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+        }
+        .box-kauppa:hover {
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+        }
+
+        /* 4. DISCORD (Valkoinen) */
         .box-discord {
-            width: 420px;
-            height: 160px;
             background-color: #ffffff;
             color: #000000;
-            /* Tämä tekee vinoneliö-muodon */
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Vaihdoin fontin vähän Discordmaisemmaksi */
         }
         .box-discord:hover {
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-            clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%); /* "Heilahtaa" toiseen suuntaan hoverissa */
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
         }
 
-        /* Mobiiliresponsivisuus (pienet näytöt) */
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
             .box-wrapper {
-                flex-direction: column; /* Laatikot allekkain */
+                flex-direction: column;
                 gap: 20px;
             }
-            h1 { font-size: 36px; }
-            p { font-size: 16px; }
-            .nav-box { width: 90% !important; height: 100px !important; clip-path: none !important; border-radius: 10px !important; font-size: 20px; }
+            h1 { font-size: 32px; }
+            .nav-box { width: 90% !important; height: 90px !important; }
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Yläosan tekstit -->
     <div class="hero-text">
         <h1>Tervetuloa Voidi Serverille!</h1>
-        <p>Säännöt, ohjeet ja kauppa löytyvät alta.</p>
+        <p>Valitse alta haluamasi osio.</p>
     </div>
 
-    <!-- Laatikoiden container -->
     <div class="box-wrapper">
-        <!-- 1. OHJEET (Valkoinen laatikko) -->
-        <a href="#" class="nav-box box-ohjeet">
-            OHJEET
-        </a>
+        <!-- Ohjeet -->
+        <a href="ohjeet.html" class="nav-box box-ohjeet">Ohjeet</a>
 
-        <!-- 2. KAUPPA (Turkoosi laatikko) -->
-        <a href="#" class="nav-box box-kauppa">
-            KAUPPA
-        </a>
+        <!-- Säännöt -->
+        <a href="saannot.html" class="nav-box box-saannot">Säännöt</a>
 
-        <!-- 3. DISCORD (Valkoinen vinoneliö, linkki lisätty) -->
-        <a href="https://discord.gg/cZ6Ngtau6B" target="_blank" class="nav-box box-discord">
-            Discord
-        </a>
+        <!-- Kauppa -->
+        <a href="kauppa.html" class="nav-box box-kauppa">Kauppa</a>
+
+        <!-- Discord -->
+        <a href="https://discord.gg/cZ6Ngtau6B" target="_blank" class="nav-box box-discord">Discord</a>
     </div>
 
 </body>
